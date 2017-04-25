@@ -4,7 +4,9 @@
   "description": "Basic example showing how to call Congress using Twilio",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "tunnel": "lt --port 3000"
   },
   "author": "Ian Webster (http://www.ianww.com/)",
   "license": "MIT",
@@ -13,5 +15,10 @@
     "express": "^4.14.1",
     "request": "^2.79.0",
     "twilio": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "localtunnel": "^1.8.2"
   }
 }
