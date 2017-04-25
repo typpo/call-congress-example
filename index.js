@@ -21,7 +21,7 @@ app.post('/new_phone_call', (req, res) => {
   });
 
   // Send phone response back to Twilio.
-  res.status(200).type('text/xml').send(call.toString());
+  res.type('text/xml').send(call.toString());
 });
 
 app.post('/redirect_to_congress', (req, res) => {
@@ -39,7 +39,7 @@ app.post('/redirect_to_congress', (req, res) => {
     });
 
     // Send it all back to the caller.
-    res.status(200).type('text/xml').send(call.toString());
+    res.type('text/xml').send(call.toString());
   });
 });
 
