@@ -15,7 +15,6 @@ app.post('/new_phone_call', (req, res) => {
   call.say('Thanks for calling.  Enter your zip code to be connected with your senators and representatives.');
   call.gather({
     numDigits: 5,
-    timeout: 30,
     action: 'redirect_to_congress',
     method: 'POST',
   });
@@ -27,7 +26,7 @@ app.post('/new_phone_call', (req, res) => {
 app.post('/redirect_to_congress', (req, res) => {
   // Get the zip code digits inputted by the user.
   const zip = req.body.Digits;
-  request('https://congress.api.sunlightfoundation.com/legislators/locate?apikey=YOUR_API_KEY_HERE&zip=' + zip, (err, resp, body) => {
+  request('https://congress.api.sunlightfoundation.com/legislators/locate?zip=' + zip, (err, resp, body) => {
     // A list of objects that represent members of Congress.
     const people = JSON.parse(body).results;
 
